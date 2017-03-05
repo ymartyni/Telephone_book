@@ -6,11 +6,17 @@
 # 6. show all
 
 db  = {}
-#dictionary
+#dictiona
+# json
 while True:
     print '---------------------------------'
     print '1. Create new phone'
+    print '2. Search by phone'
+    print '3. Search by name'
+    print '4. Delete by phone'
+    print '5. D1elete by name'
     print '6. Show all'
+    print '0. Exit'
     print '---------------------------------'
 
     choice = int(raw_input())
@@ -18,7 +24,7 @@ while True:
     if choice == 1:
         print 'Creating new phone in phonebook...'
         name = raw_input('Please type name: ')
-        phone = int(raw_input('Please type phone'))
+        phone = int(raw_input('Please type phone -'))
         db[name] = phone
         print "{} : {}".format(name, phone)
 
