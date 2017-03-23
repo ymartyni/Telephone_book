@@ -32,9 +32,42 @@ while True:
         for key, value in db.items():
             print "{} : {}".format(key, value)
 
+# що попробував дописати, але ніхера не вийшло
 
 
+db  = {}
 
+while True:
+    print '-------------------'
+    print '1.Create new phone'
+    print '2.Search by phone'
+    print '3.Search by name'
+    print '4.Delete by phone'
+    print '5.Delete by name'
+    print '6.Show all'
+    print '0.Exit'
+    print '--------------------'
 
+    choice = int (raw_input())
 
+    if choice == 1:
+        print 'Creating new phone in phonebook.....'
+        name = raw_input('Please type name: ')
+        phone = int(raw_input('Please type phone: '))
+        db[name] = phone
+        print "{} : {}".format(name,phone)
+
+    elif choice == 6:
+        for key, value in db.items():
+            print "{} : {}".format(key, value)
+
+    elif choice == 4:
+         for value in db.items():
+            phone = int(raw_input('delete phone: '))
+            del db{}
+            
+    elif choice == 5:
+         for key, value in db.items():
+            name = raw_input('Please write name for delete: ')
+            print ('delete:',db.pop( key))
 
