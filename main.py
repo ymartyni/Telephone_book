@@ -20,13 +20,19 @@ while True:
         db[name] = phone
         print "{} : {}".format(name,phone)
 
-    elif choice == 6:
+    elif choice == 2:
+        phone = int(raw_input('serch number'))
         for key, value in db.items():
-            print "{} : {}".format(key, value)
-    # db  = {
-    # 'test': 123,
-    # 'new' : 555,
-    # '123' : 'Yura'}
+            if phone == value:
+                print "{} : {}".format(key, value)
+
+    elif choice == 3:
+        name == raw_input('serch by name')
+        for key, value in db.items():
+            if name == key:
+                print "{} : {}".format(key, value)
+
+
     elif choice == 4:
         phone = int(raw_input('delete number '))
         for key, value in db.items():
@@ -34,12 +40,23 @@ while True:
                 print "{} : {}".format(key, value)
                 del db[key]
 
-
-
     elif choice == 5:
         name = raw_input('Please write name for delete: ')
         del db[name]
         print 'Name: {} was deleted'.format(name)
         # print 'Name: ' + name + ' was deleted'
+
+    elif choice == 6:
+        for key, value in db.items():
+            print "{} : {}".format(key, value)
+    # db  = {
+    # 'test': 123,
+    # 'new' : 555,
+    # '123' : 'Yura'}
+
+
+
+
+
 
 
