@@ -1,4 +1,4 @@
-db  = {'test': 123, 'new' : 555}
+db  = {123 : 'test', 555 : 'new'}
 
 while True:
     print '-------------------'
@@ -17,34 +17,38 @@ while True:
         print 'Creating new phone in phonebook.....'
         name = raw_input('Please type name: ')
         phone = int(raw_input('Please type phone: '))
-        db[name] = phone
-        print "{} : {}".format(name,phone)
+        db[phone] = name
+        print "{} : {}".format(phone,name)
 
     elif choice == 2:
         phone = int(raw_input('serch number'))
         for key, value in db.items():
-            if phone == value:
+            if phone == key:
                 print "{} : {}".format(key, value)
 
     elif choice == 3:
-        name == raw_input('serch by name')
+        name = raw_input('serch by name')
         for key, value in db.items():
-            if name == key:
+            if name == value:
                 print "{} : {}".format(key, value)
 
 
     elif choice == 4:
         phone = int(raw_input('delete number '))
         for key, value in db.items():
-            if phone == value:
+            if phone == key:
                 print "{} : {}".format(key, value)
                 del db[key]
 
     elif choice == 5:
         name = raw_input('Please write name for delete: ')
-        del db[name]
-        print 'Name: {} was deleted'.format(name)
-        # print 'Name: ' + name + ' was deleted'
+        for key, value in db.items():
+            if name == value:
+                print "{} : {}".format(key, value)
+                del db[key]
+        #del db[key]
+        #print '{}: Name was deleted'.format(name)
+        #print 'Name: ' + name + ' was deleted'
 
     elif choice == 6:
         for key, value in db.items():
@@ -54,7 +58,8 @@ while True:
     # 'new' : 555,
     # '123' : 'Yura'}
 
-
+    elif choice == 0:
+            break
 
 
 
